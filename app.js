@@ -159,5 +159,6 @@ app.get("/tasks/done/:todoId", async (req, res) => {
 // Start the server
 app.listen(PORT, async () => {
   await readTodos();
+  console.log('App is running on Port 3000');
 });
 
