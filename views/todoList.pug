@@ -1,0 +1,17 @@
+if todos.length <= 0
+    div.empty-todo You Don't Have any TODOs Yet!                 
+else 
+    each todo in todos
+        div.todo-item                        
+            if todo.done
+                h3.done #{todo.title}
+            else 
+                h3 #{todo.title}
+            p #{todo.description}  
+            div.action-btns  
+                form(role='form' method='POST' action='/tasks/delete/' + todo.id)
+                    if isEditable && !todo.done
+                        a.done.action-btn(type="button" href="/tasks/done/" + todo.id) Done 
+                    if isEditable
+                        a.edit.action-btn(type="button" href="/tasks/" + todo.id) Edit 
+                    button.delete.action-btn(type="submit") Delete

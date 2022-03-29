@@ -1,0 +1,29 @@
+extends layout
+
+block layout-content
+    div.View.create
+        div.content 
+            if success
+                div.msg.msg-success #{success}
+            if error
+                div.msg.msg-error #{error}
+
+            div.todos-view
+                include newTodoCard.pug
+
+                div.todo-list       
+                    - var deletePath = '/delete/'   
+                    - var isEditable = true      
+                    include todoList.pug
+
+                if todoToUpdate                
+                    div.update-modal
+                        div.update-todo
+                            h3 Update TODO 
+                            form(role='form' method='POST' action='/tasks/' + todoToUpdate.id)
+                                div.form-group(alt="Title")
+                                    input.inp-title(type='text' alt="Title" required="" name="title" value=todoToUpdate.title)           
+                                div.form-group(alt="Description")
+                                    textarea.inp-description(rows="4" type='text' required="" name="description")=todoToUpdate.description  
+                                button(type="submit") Save                    
+                                a(href="/") Cancel     

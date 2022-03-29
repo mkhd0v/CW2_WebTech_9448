@@ -1,0 +1,9 @@
+extends layout
+
+block layout-content
+    - var deletePath = '/tasks/delete/'
+    div.View.done-todos
+        div.content
+            div.todos-view
+                div.todo-list(style={'max-height': '80vh'})                
+                    include todoList.pug 
