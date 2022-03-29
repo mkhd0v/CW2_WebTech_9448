@@ -1,0 +1,11 @@
+div.new-todo
+    h3 Add a New TODO
+    form(role='form' method='POST' action='/tasks')
+        div.form-group(alt="Title")
+            input.inp-title(type='text' alt="Title" required="" name="title")           
+        div.form-group(alt="Description")
+            textarea.inp-description(rows="4" cols="100" type='text' name="description" required)  
+
+        //- if error
+        //-     div.error #{error}
+        button.submit-btn(type="submit") Add 
