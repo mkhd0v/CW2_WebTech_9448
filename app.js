@@ -87,7 +87,7 @@ app.post("/tasks", async (req, res) => {
   const id = Math.floor(Math.random() * 100000);
 
   if (newTodo.title.trim() === "" || newTodo.description.trim() === "") {
-    return res.redirect("/?invlaidInp=true");
+    return res.redirect("/?error=invalidInput");
   }
 
   todos.unshift({
