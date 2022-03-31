@@ -28,5 +28,5 @@ node app
 https://github.com/mkhd0v/CW2_WebTech_9448
 
 ### Glitch Link
-https://familiar-scratched-snowshoe.glitch.me/tasks/done
+https://familiar-scratched-snowshoe.glitch.me/
 
